@@ -1,0 +1,34 @@
+{
+	"contributors": [
+		"tav <tav@espians.com>",
+		"William Pritchard <williamp@kainos.com>"
+	],
+	"dependencies": {
+		"@types/jest": "22.0.1",
+		"@types/node": "8.0.58",
+		"@types/puppeteer": "0.13.9",
+		"jest": "22.0.6",
+		"puppeteer": "^0.13.0",
+		"typescript": "^2.6.2"
+	},
+	"description": "LPG Headless Tests",
+	"devDependencies": {
+		"tslint": "5.8.0"
+	},
+	"homepage": "https://github.com/Civil-Service-Human-Resources/lpg-headless-tests",
+	"keywords": [
+		"govuk",
+		"cshr",
+		"lpg"
+	],
+	"license": "MIT",
+	"name": "@cshr/lpg-headless-tests",
+	"repository": "https://github.com/Civil-Service-Human-Resources/lpg-headless-tests",
+	"scripts": {
+		"build": "./bin/tsc --watch",
+		"clean": "rm -rf __tests__",
+		"lint": "tslint --project tsconfig.json",
+		"test": "jest"
+	},
+	"version": "0.0.1"
+}
