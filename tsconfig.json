@@ -8,7 +8,7 @@
 		"noImplicitAny": true,
 		"noImplicitThis": true,
 		"noUnusedLocals": true,
-		"outDir": "__tests__",
+		"outDir": "dist",
 		"preserveConstEnums": true,
 		"pretty": true,
 		"sourceMap": true,

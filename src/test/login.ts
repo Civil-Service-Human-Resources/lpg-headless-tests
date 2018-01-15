@@ -1,6 +1,6 @@
+import * as helper from 'extension/helper'
+import {loginToCsl, selectors} from 'page/login'
 import * as puppeteer from 'puppeteer'
-import * as helper from '../extension/helper'
-import {selectors, loginToCsl} from '../page/login'
 
 declare var browser: puppeteer.Browser
 

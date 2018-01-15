@@ -23,10 +23,11 @@
 	"repository":
 		"https://github.com/Civil-Service-Human-Resources/lpg-headless-tests",
 	"scripts": {
-		"build": "./bin/tsc --watch",
-		"clean": "rm -rf __tests__",
+		"build": "./bin/tsc",
+		"clean": "rm -rf dist",
 		"lint": "tslint --project tsconfig.json",
-		"test": "jest"
+		"test": "jest",
+		"watch": "./bin/tsc --watch"
 	},
 	"version": "0.0.1"
 }
