@@ -4,7 +4,7 @@ export async function checkElementIsPresent(
 	selector: string,
 	page: puppeteer.Page
 ): Promise<boolean> {
-	return page.evaluate(() => {
+	return page.evaluate(selector => {
 		const e = document.querySelector(selector)
 		if (!e) {
 			return false
@@ -16,5 +16,5 @@ export async function checkElementIsPresent(
 			style.visibility !== 'hidden' &&
 			style.opacity !== '0'
 		)
-	})
+	}, selector)
 }
