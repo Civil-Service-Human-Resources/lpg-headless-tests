@@ -2,7 +2,7 @@
 import * as puppeteer from 'puppeteer'
 
 //Locators
-export const locators: {[key: string]: string} = {
+export const selectors: {[key: string]: string} = {
 	usernameField: '#username',
 	passwordField: '#password',
 	loginButton:
@@ -10,9 +10,9 @@ export const locators: {[key: string]: string} = {
 }
 
 export async function loginToCsl(page: puppeteer.Page) {
-	await page.click(locators.usernameField)
+	await page.click(selectors.usernameField)
 	await page.keyboard.type('username')
-	await page.click(locators.passwordField)
+	await page.click(selectors.passwordField)
 	await page.keyboard.type('password')
-	await page.click(locators.loginButton)
+	await page.click(selectors.loginButton)
 }

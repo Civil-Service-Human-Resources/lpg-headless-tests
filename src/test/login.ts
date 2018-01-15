@@ -1,6 +1,6 @@
 import * as puppeteer from 'puppeteer'
 import * as helper from '../extension/helper'
-import {locators, loginToCsl} from '../page_object/loginPage'
+import {selectors, loginToCsl} from '../page/login'
 
 declare var browser: puppeteer.Browser
 
@@ -21,20 +21,20 @@ describe('login page elements', () => {
 
 	it('Should load the username field', async () => {
 		expect(
-			await helper.checkElementIsPresent(locators.usernameField, page)
+			await helper.checkElementIsPresent(selectors.usernameField, page)
 		).toBe(true)
 	})
 
 	it('Should load the password field', async () => {
 		expect(
-			await helper.checkElementIsPresent(locators.passwordField, page)
+			await helper.checkElementIsPresent(selectors.passwordField, page)
 		).toBe(true)
 	})
 
 	it('Should load the login button', async () => {
-		expect(await helper.checkElementIsPresent(locators.loginButton, page)).toBe(
-			true
-		)
+		expect(
+			await helper.checkElementIsPresent(selectors.loginButton, page)
+		).toBe(true)
 	})
 
 	it('Should login to the CSL portal', async () => {

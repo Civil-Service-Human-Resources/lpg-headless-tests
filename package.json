@@ -21,7 +21,7 @@
 	"license": "MIT",
 	"name": "@cshr/lpg-headless-tests",
 	"repository":
-		"git@github.com:Civil-Service-Human-Resources/lpg-headless-tests.git",
+		"https://github.com/Civil-Service-Human-Resources/lpg-headless-tests",
 	"scripts": {
 		"build": "./bin/tsc --watch",
 		"clean": "rm -rf __tests__",
