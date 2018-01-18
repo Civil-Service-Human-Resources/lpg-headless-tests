@@ -1,18 +1,22 @@
 //login page
 import * as puppeteer from 'puppeteer'
 
-//Locators
+//selectors
 export const selectors: {[key: string]: string} = {
 	usernameField: '#username',
 	passwordField: '#password',
 	loginButton:
 		'#content > div > div:nth-child(2) > div > form > div:nth-child(4) > input',
+	accountRecovery: '',
+	loginSucess: '#content > ul > li:nth-child(1)',
 }
 
-export async function loginToCsl(page: puppeteer.Page) {
-	await page.click(selectors.usernameField)
-	await page.keyboard.type('username')
-	await page.click(selectors.passwordField)
-	await page.keyboard.type('password')
+export async function loginToCsl(
+	page: puppeteer.Page,
+	username: string,
+	password: string
+) {
+	await page.type(selectors.usernameField, username)
+	await page.type(selectors.passwordField, password)
 	await page.click(selectors.loginButton)
 }

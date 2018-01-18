@@ -18,3 +18,10 @@ export async function checkElementIsPresent(
 		)
 	}, selector)
 }
+
+export async function returnElementInnerHtml(
+	selector: string,
+	page: puppeteer.Page
+): Promise<string> {
+	return page.$eval(selector, element => element.innerHTML)
+}

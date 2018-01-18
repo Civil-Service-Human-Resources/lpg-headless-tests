@@ -3,16 +3,15 @@ import {loginToCsl, selectors} from 'page/login'
 import * as puppeteer from 'puppeteer'
 
 declare var browser: puppeteer.Browser
-
 const timeout = 5000
-const url = 'http://localhost:3001'
+const {URL = '', USERNAME = '', PASS = ''} = process.env
 
 describe('login page elements', () => {
 	let page: puppeteer.Page
 
 	beforeAll(async () => {
 		page = await browser.newPage()
-		await page.goto(url)
+		await page.goto(URL)
 	}, timeout)
 
 	afterAll(async () => {
@@ -38,6 +37,17 @@ describe('login page elements', () => {
 	})
 
 	it('Should login to the CSL portal', async () => {
-		await loginToCsl(page)
+		await loginToCsl(page, USERNAME, PASS)
+		await page.waitFor(selectors.loginSucess, {timeout: 9000})
+		expect(
+			await helper.returnElementInnerHtml(selectors.loginSucess, page)
+		).toContain(USERNAME)
+	})
+
+	it('Should display accont recovery steps when login fails', async () => {
+		await loginToCsl(page, 'username', 'failed')
+		expect(
+			await helper.checkElementIsPresent(selectors.accountRecovery, page)
+		).toBe(true)
 	})
 })
