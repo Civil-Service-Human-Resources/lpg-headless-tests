@@ -14,17 +14,16 @@
 	},
 	"description": "LPG Headless Tests",
 	"devDependencies": {
+		"jest-cli": "22.1.2",
 		"tslint": "5.8.0"
 	},
-	"homepage": "https://github.com/Civil-Service-Human-Resources/lpg-headless-tests",
-	"keywords": [
-		"govuk",
-		"cshr",
-		"lpg"
-	],
+	"homepage":
+		"https://github.com/Civil-Service-Human-Resources/lpg-headless-tests",
+	"keywords": ["govuk", "cshr", "lpg"],
 	"license": "MIT",
 	"name": "@cshr/lpg-headless-tests",
-	"repository": "https://github.com/Civil-Service-Human-Resources/lpg-headless-tests",
+	"repository":
+		"https://github.com/Civil-Service-Human-Resources/lpg-headless-tests",
 	"scripts": {
 		"build": "./bin/tsc",
 		"clean": "rm -rf dist",
