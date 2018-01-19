@@ -47,7 +47,7 @@ describe('login page elements', () => {
 	it('Should display accont recovery steps when login fails', async () => {
 		await loginToCsl(page, 'username', 'failed')
 		expect(
-			await helper.checkElementIsPresent(selectors.accountRecovery, page)
+			await helper.checkElementIsPresent(selectors.loginFailure, page)
 		).toBe(true)
 	})
 })
