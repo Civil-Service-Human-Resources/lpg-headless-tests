@@ -36,18 +36,18 @@ describe('login page elements', () => {
 		).toBe(true)
 	})
 
+	it('Should display accont recovery steps when login fails', async () => {
+		await loginToCsl(page, 'username', 'failed')
+		expect(
+			await helper.checkElementIsPresent(selectors.loginFailure, page)
+		).toBe(true)
+	})
+
 	it('Should login to the CSL portal', async () => {
 		await loginToCsl(page, USERNAME, PASS)
 		await page.waitFor(selectors.loginSucess, {timeout: 9000})
 		expect(
 			await helper.returnElementInnerHtml(selectors.loginSucess, page)
 		).toContain(USERNAME)
-	})
-
-	it('Should display accont recovery steps when login fails', async () => {
-		await loginToCsl(page, 'username', 'failed')
-		expect(
-			await helper.checkElementIsPresent(selectors.loginFailure, page)
-		).toBe(true)
 	})
 })

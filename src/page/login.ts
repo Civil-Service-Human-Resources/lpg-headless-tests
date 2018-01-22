@@ -3,11 +3,13 @@ import * as puppeteer from 'puppeteer'
 
 //selectors
 export const selectors: {[key: string]: string} = {
-	usernameField: '#username',
-	passwordField: '#password',
+	usernameField:
+		'#content > div > div > div > div > div > div > form > fieldset:nth-child(2) > input',
+	passwordField:
+		'#content > div > div > div > div > div > div > form > fieldset:nth-child(3) > input',
 	loginButton:
-		'#content > div > div:nth-child(2) > div > form > div:nth-child(4) > input',
-	loginSucess: '#content > ul > li:nth-child(1)',
+		'#content > div > div > div > div > div > div > form > div > input',
+	loginSucess: '#emailaddress',
 	loginFailure: '#error-summary-heading-example-1',
 }
 

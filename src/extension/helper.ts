@@ -25,3 +25,10 @@ export async function returnElementInnerHtml(
 ): Promise<string> {
 	return page.$eval(selector, element => element.innerHTML)
 }
+
+export async function returnvalue(
+	selector: string,
+	page: puppeteer.Page
+): Promise<string> {
+	return page.$eval(selector, element => element.getProperty('value'))
+}
